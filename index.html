@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>mical</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" href="css/style.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="css/responsive.css">
+      <!-- fevicon -->
+      <link rel="icon" href="images/fevicon.png" type="image/gif" />
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+   </head>
+   <!-- body -->
+   <body class="main-layout">
+      <!-- loader  -->
+      <div class="loader_bg">
+         <div class="loader"><img src="images/loading.gif" alt="#" /></div>
+      </div>
+      <!-- end loader -->
+      <!-- header -->
+      <header>
+         <!-- header inner -->
+         <div class="header">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+                  <div class="full">
+                    <div class="center-desk">
+                      <div class="logo">
+                        <a href="index.html">
+                          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMwAAADACAMAAAB/Pny7AAABNVBMVEX///8RXanbICcAAAC1tLTNzMz7+/t2dHX87+/ZAADQ2+o1b7LyvL0AWKfnf4DZAAkAVKXu8vjmcnb76up0lcTldnhniL3aFR331NXhTVL2+Pvj6PLgSEwAUKQAPZ4AQZ9EerjY2NgARqFXf7kANJs9PT1ZWVm/yOClu9rX5fEAS6P2zM0+arCXl5fv7u9jYWLB0ufrlpgwLS1PT08AAJCBo86Qps2WstV1i7uvxN6NjIylpKUAKZgYExQiHx9Oc7UAFpM5XquytM2EPHKcADKID1WYja7CACOcU3m8GTmuepO3c4m4M1LIyNiuS2nKssG2ZHy4nrSlZYSEeJ+KVn3jqrCHjbbjYGHyqqtJRo2SL2WwFEHdNztOVpdhSYd3RoCTQGntEwCgO2OqNFl/R3fJIjXOT1uk2PsfAAAOV0lEQVR4nO2cC5ebRpbHi0ZC7sKkqQmLkiKABLQFGKnL3QZEv9TY2Xg968xjd2cym9h52d7v/xH2FuiBHt3Jjo11ek/9TyJLRQH14966dSmKRkhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhIaG+KGNl3Ez6SsB+lUZjn/w94aFRYKUPGKMrpvtvyoSJ5mlkKwQrCqYH33ZoPFMsRffb866//9RuCcGHtuzkfJJyy6JsXh/3+0eG/YRze636jFBF59rJ/AOr3/0hofp9NQ8EW/350UOno1bcsj/bdog+QVVj4T3OY/ss/E6tQ9t2kf17EsPDbFQxl+T2GQTjHfzmcw/zwLQ7vcwCgKUF/fdGv+8xfIsTus5spLCui/zjiNIevIBPw77NlEGUMR//5st9/8V8FCtm+m/OBinKGEYyWBSUFK+61YUAszHFkIYxxGv4TQyalhNL2O5pCVlqejTYKrSpLVj5nITOxUbDRg/r3liarXayG7RSLjcI8S7MsHDGrXSArNRZaplwkX5YZU6MqffwQffu3Z+zPf7OUx5/D7y/+8C+b+vt0LuObPz5cXhaW+VIcxzYojiU/azUQ4sTWa8Xm3H9opi/K9Fiqz/7wuy+eHD5A/zh4/PAJh3l8eLSuw+e2blf67+9/6D9ZHN1IYl2TloLjtXkHgdXFufQ5jBJqy9NrUlFXe3j45evDzz77rv/VwWcPKpiDNR39Ot+j/B6C3gImTOwGSS1bLT4hDFtjURYw/T6kzJABHO6C6b9/U+/x40te6aCGyaUtlOYF+gQwkd1gCRfVHi4bf7QL5pef6vrv+nWeUMGwZBcLVFPb8rRNGOqsTqrny2p3w/RfvalYfl6Uchjq6ztZwNOMlqLABgx1G1dwxfIbMEc/1Sy/HDRgimR1JE3XpYb3Ji0lEeswVF15hp42qm3D9BfitwVVj3n3y7KMwxj2svEGsyKcr7wuDm9pzceEIf6Kxc6a1TZhvnj91Vyv+/NQ9uaX118uCv8BQdHQlweuB7BItbVasdFORtSAMbDRYEnXqm3CPPhioSew5R13sn7/u88XhTAUEXMTBoUzfy6jnVmEFYzmG9JtLFswzS2Vl2m/HvX/0CxfwUDnq2lItJDVzkwibvSSVReN042z3QnzCuzyBrrOGkyzz+hmjj9Fqt2EafSXzSt3J8xb2OVtfxMmbURmXZuZRojbzps/Bsz30Pvfb8EUa2MmD86qbxStzlTvhJHizYHgLpiD5xCWD7bcjM42B02IY1KZtuhvu2E0aeOUd8G8eCdpb/tbMAjrOw6t6ZuxpXUYycvWq90F8xoi8w87YFCxnTNXZk/az83WFayf8G7LaG9e7oJBuNR2Hd2etTS/exuMJq2Fnjv7zM/aj++3+wwXSWfSDvO0nwFwNbpsfGc609zS/1X76cVuGMAJjYFkb/YebdQ+jGY2fthNR/uNcebdrTAQ1XCRGWq8ZqB4K/Z/dBg7J818wG+c8DcygJ9ucbOFCAAN4pXdl+laazA6XC72O+9n1ra8//G2PtMQtYrV3Zo2aCXTbCaa/ASmvYJphNA7YfrPd0Sz0XK2Kl003FrmnpraMkx920waptGnS0e7G+at9GoLJo+1xd3L8ppkiyul+58EBoVNmlsnNNZgDt6/2c4AiuXUjD6YdxCyul9rJzZvwdDBqp+u5lHuhjl8zmPzOoy1umvVIbIoCmWzeBnN2lkasT1vhuNVRFuG0Lth+u95p9kIAFlz0HJs3fFWMxp6OzMa2zA0XcUAyV7OaN4FA6b5fgsmuiW34Edtfw5gMdccqY0BYR52fgPmoA8jzWZoLnZOaPKDfpqpplphoxFxqvwumFc/H22NM6G2cxpQl9pJZnbDELPpaOz3wBwcvX11tDVoMjXeZonV1p4j4tVk1hIGjZJFoabZJUX1xHmtw+10ptLR1wffbR89teM1X9NjO2tvfQc2B3Opq8ksJRuspPLB5vFXX8711ZMNmNeLLf/zZPPgPMvMEjeuH/fYsecN8qjFWYCdjwHXngMSHnmUByttHODWLYtDQZIJV8w305BZ5N4vvQMpyidZB6HsRe2wdE96e9BJtx2aW7V99bYu6K5L3CxTdu/2CaV0xxdD+Pd8PJxcXEyGF1ydCRpe9HoXE7Dl+ELpnncQmnTOe+dwiaEWlHfhk+88L+uMh/TifIKU4bgq2JMmPVmGpirydbd7LXcvZK5Hk8mJfHYq9xQ0luXJhXyGUOfq6gy+oyFs76ITmZd1T+VH/NfwTO5OTuHL5Ew+vpKH+4IZnl5fwSVF8ml3eCx3h52efNzpKl343pGPhxym05FPOPQ5VBij4dU10B9fXz1CyljuDXvyIzR8BDDHnEp+1D2RL/YGIz96dLKCAQvwS44urq8VJB93OcxJBXNS2eMEYI6vz4enZ8AAgBfoQj5uwhzD9dibZTry+fnVcBvm6pTyMoA5ljnMkMP0YNtQPjs761yf1zDjdRhAPj7fWwRQzuXOmDNswIzlJUzvurcO0+sBSmcnTNUFjyd7gpmcnXbO5QtF2YZR5jAXx6dXazBgyjN5stPNFAiJvEvtCUa+gujUm0DDO02YzvUVnfeZ7qOrqyoA8D7T45bpQMziMPR8bhneoSoYcFrEzbUfdeXr4+MrcAz5qjfm0WsOA2BgsbMJwHQurngAOIdAcAoXHWAgYI0hcCAO0jkGQCDtnV9D3O7KZ+OzvVlmzK81OA2ChsqnF8oCBo2PwfnHvEJneA2WQd2za/kUNg2vTriVKphh71q+PuNDK9Q+PeFdhhfsK1fuwOAOY3s11I+7PA4Nz+thYp4ZdM9hrBnzaw3DfAcqTMYdvsOkqsbLqu4+vKjqrAqE/m8advaidkbRSXcvEo4ndG9FmMVfJmURsvgKN7yYborC+SxzhCOEIyUKQ4IIxvMFPRG2KI6oxfh7TyEcArbAb0as6gvBhPDP6kf1wXdSWF4o1UFaWhY0epoxW4qeJpY+C0vHCZKqGHu2O6i+GZeh9XSK9dgLCL5xnctq0ju/NLDuYOMG08DzbGYGruOYo6fP/n7pusEgC8LCnTLHcYNZqjvuDX+iSIzAdiTEbhznpp0J2lGQGy6OHJ85RTSTUkmvzpO7VK2xUq8wSlwEYV4WkZMYicRnV0Mvi1R3lDpR6BgsDkND0tMCahX8S5jZBZOMKB3ogzBMBqnB92GSH/lBhB01a2ml9sjxE1+BVpq+hROVDOpHJ7gczNcBp3EWG4g3mRHs+JYp4QomjVTbSN2IBT4GV7XKGEqDEJHE4c/7OAxFeZwjphngphzGSxXDLbBjWi0tnhu5Ulwg7PI1mXgmmXr9wJxJsU9G3KFSTdIKZBneDKo5iV8v36pgJNXwMJrGyYiiSIqRwmEigKELmIzDSJrkRNWpMiUFGHft0e9HhfH02FAiV4tNAjC+XcFEiT+QzNKqYHTdQDTKSw+8MfHjJYxkzgYuplYu2aM7YdR0as1hKsvMsrSdyfORY6oe4W6mMXAzS9MrL4oLy6vXUqW6mSRWCB3AzSNwKVVduJmUmbYbhVMrDDJlAyYuwLvmMJpRz2KDmyEOE0xRS+/SQABIvZAHgCDDMxUlGu8zheZju17YDFszOw+D3IQIEfjETGqYDGBy8J/cSbMgb1rGhS9Q6KULywzSlO+DJbUYXBIO05J4aC7d6CaxEikvbaQ7vN8rpmM7XsmbAKGZPPVx4jkJwU9nxA84LQ/NXsrKG0w0xwW+yAuA4WmGovIG3FRyXb72JgsyVMSue8lDM82cODARe2q2BWMVMCbCoAnNYRZm8Fn1TQUzGBG5Z0fwyfgYCAMdYVCheukcRlnKIqhVDYKkescO8XEXUcxh68JqZ9iJ1X/iQYHRmSLC7vs7+J9G/M02osAH5c+dIFDB/5Qq8JM0SqrHT7T+VAiti+AXf1gFvxT+gtz8cPNqCt9avTYHh+cV6zJ+MkTbeuRU6KoaQ/SUTBLaTmKhOLUGKfYTJJkQ1JyBhTSfr+Fx3VRBhuPlTM0hKsOulgHdgtmGJRUhjDk8l6OZ56SIqI4dKqlEfV5cxCzUCYyleqgYUmIzK3HaGmdm0sxk3mAKsczMPRNB7qUabHZJY9/SjdDOEU/SCic3Lq3o0jC0YqqmVRBgiRsiFsywF4axmVwSHrAMI1AyLzdLbEBGZE+nDAJ3HtDUzv0ST+PpFGdaOmtn8RyyZhlibootLOUky1HgFwlYxgsl3wpCMjOQN0A013ARw38syqxQkmy+ZzhIDIW5SS6FoWPlDuOv45lFiPyS4CwyYoDBmIbeIHXpAGJhZk1thinkOAVr6WWAWUpZrHtTrFVvxgeaFqcw4qgDE2CsOUwmcZIiLiDfJ75bR1rDUClzB6paAEzBYSgMUAwNSh68pgCjxxIGdrOCQXw1m+1Elqm1tVK7gvGMEQYYmmVgmRAsA4l7sgPGLnSvQEZQRWfTSD0CRrWlJQyE4ZlNuWWM2jKjEcn9QeJUlkmjqV2MSISzllY11TBuTilOsqhUUWCQgYGTQtVNyw2tJKXegJIwxqGLmceNAzBV/qbqmouxW2h6EbosdTHPT3F2SYwyCmOWcRgIbvkgBRizjDIbT22LUCOLZm2tBCoBJtDLKTG88rJAN6aVGLjM82BA/bgMMAriclrYpR0TGpSlWyDzhsOMAiP3MnxZTOFexytjB1WvsNoxxZclpK3TgEpumRTPpGJ2Q9ll6U2J6ZQlRITEaek9LRIWipVlWaGQMIMB3SigxMoZyUJkhRlWEGwMKc753zSJsiLEqKgWB4HX8DvmNIoyjLOs/pMnUZ7BvziDe+xRRkMoxjgnIRiC8bICjgWpQ9ZS/xcSEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhJqU/8Lw+Ib1ix/dAwAAAAASUVORK5CYII=" alt="Logo" style="width: 80px; height: auto;" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+                  <nav class="navigation navbar navbar-expand-md navbar-dark">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarsExample04">
+                      <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                          <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="furnitures.html">What we do</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="testimonial.html">Track my Bus</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="contact.html">Contact Us</a>
+                        </li>
+                        <li class="nav-item d_none">
+                          <a class="nav-link" href="login.html">
+                            <i class="fa fa-user-circle padd_right" aria-hidden="true"></i>Login/Register
+                          </a>
+                        </li>
+                        <li class="nav-item d_none">
+                          <a class="nav-link" href="#">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+      <!-- end header inner -->
+      <!-- end header -->
+      <!-- banner -->
+      <section class="banner_main">
+         <div id="banner1" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+               <li data-target="#banner1" data-slide-to="0" class="active"></li>
+               <li data-target="#banner1" data-slide-to="1"></li>
+               <li data-target="#banner1" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+               <div class="carousel-item active">
+                  <div class="container-fluid">
+                     <div class="carousel-caption">
+                        <div class="row">
+                           <div class="col-md-6">
+                              <div class="text-bg">
+                                 <h1>KITS</h1>
+                                 <span>Bus Tracking</span>
+                                 <p> The KITS bus tracking system provides real-time updates on bus locations using GPS technology.It allows students, parents, and administrators to easily track bus routes, arrival times, and delays. The system ensures safe, efficient, and transparent transportation services, enhancing overall accessibility and convenience.</p>
+                                 <a href="trackmybus.html">TRACK MY BUS </a> 
+                              </div>
+                           </div>
+                           <div class="col-md-6">
+                              <div class="text_img">
+                                 <figure><img src="images/.png" alt="#"/></figure>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="carousel-item">
+                  <div class="container-fluid">
+                     <div class="carousel-caption">
+                        <div class="row">
+                           <div class="col-md-6">
+                              <div class="text-bg">
+                                 <h1>KITS</h1>
+                                 <span>CHAT BOT </span>
+                                 <p>
+                                    The KITS bus tracking system provides real-time updates on bus locations using GPS technology.It allows students, parents, and administrators to easily track bus routes, arrival times, and delays. The system ensures safe, efficient, and transparent transportation services, enhancing overall accessibility and convenience.</p>
+                                 <a href="#">KITS BOT </a> 
+                              </div>
+                           </div>
+                           <div class="col-md-6">
+                              <div class="text_img">
+                                 <figure><img src="images/.png" alt="#"/></figure>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="carousel-item">
+                  <div class="container-fluid">
+                     <div class="carousel-caption">
+                        <div class="row">
+                           <div class="col-md-6">
+                              <div class="text-bg">
+                                 <h1>KITS</h1>
+                                 <span>Bus Tracking</span>
+                                 <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, </p>
+                                 <a href="#">More Info </a> <a href="#">Contact Us</a>
+                              </div>
+                           </div>
+                           <div class="col-md-6">
+                              <div class="text_img">
+                                 <figure><img src="images/.png" alt="#"/></figure>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <a class="carousel-control-prev" href="#banner1" role="button" data-slide="prev">
+            <i class="fa fa-chevron-left" aria-hidden="true"></i>
+            </a>
+            <a class="carousel-control-next" href="#banner1" role="button" data-slide="next">
+            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+            </a>
+         </div>
+      </section>
+      <!-- end banner -->
+      <!-- three_box -->
+      <div class="three_box">
+         <div class="container">
+           <div class="row">
+             <div class="col-md-4">
+               <div class="box_text">
+                 <h3>REAL-TIME BUS TRACKING</h3>
+                 <i><img src="images/bustracking.png" alt="Real-Time BTracking" /></i>
+                 <p>Track your bus location in real-time with GPS updates for hassle-free commuting.</p>
+               </div>
+             </div>
+             <div class="col-md-4">
+               <div class="box_text">
+                 <h3>FEE MANAGEMENT</h3>
+                 <i><img src="images/fee.jpg" alt="Fee Management" /></i>
+                 <p>Pay and manage your transportation fees easily through the student portal.</p>
+               </div>
+             </div>
+             <div class="col-md-4">
+               <div class="box_text">
+                 <h3>STUDENT DASHBOARD</h3>
+                 <i><img src="images/student.png" alt="Student Dashboard" /></i>
+                 <p>Access your personalized academic and transport information in one place.</p>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+       
+      <!-- three_box -->
+      <!-- about -->
+      <div class="about">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage">
+                     <h2>About Our College</h2>
+                     <p> <a href="https://www.kitsguntur.ac.in/" target="_blank"><br><b>Visit KITS website</b></a></p>
+                  </div>
+               </div>
+            </div>
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-10 offset-md-1">
+                     <div class="about_img">
+                        <div class="about_box">
+                           <p><b>“Your journey, our priority. Track your ride, every step of the way!”</b></p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      
+      <!-- end about -->
+      <!-- wedo  section -->
+      <div class="wedo ">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage">
+                     <h2>What We Do</h2>
+                     <p>"TURNING MILES INTO MILESTONES"</p>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-10 offset-md-1">
+                  <div class="row">
+                     <div class="col-md-6 margin_bottom">
+                        <div class="work">
+                           <figure><img src="images/img1.png" alt="#" /></figure>
+                        </div>
+                        <div class="work_text">
+                           <h3>KITS<br><span class="blu">BUS TRACK</span></h3>
+                        </div>
+                     </div>
+                     <div class="col-md-6 margin_bottom">
+                        <div class="work">
+                           <figure><img src="images/img2.png" alt="#" /></figure>
+                        </div>
+                        <div class="work_text">
+                           <h3>Driver <br><span class="blu">Information</span></h3>
+                        </div>
+                     </div>
+                     <div class="col-md-6 margin_bottom">
+                        <div class="work">
+                           <figure><img src="images/img3.png" alt="#" /></figure>
+                        </div>
+                        <div class="work_text">
+                           <h3> Route Planning &<br> <span class="blu"> </span>Optimization</h3>
+                        </div>
+                     </div>
+                     <div class="col-md-6 margin_bottom">
+                        <div class="work">
+                           <figure><img src="images/img4.png" alt="#" /></figure>
+                        </div>
+                        <div class="work_text">
+                           <h3>location<br><span class="blu">Geofencing</span></h3>
+                        </div>
+                     </div>
+                  </div>
+                  <a class="read_more" href="https://www.kitsguntur.ac.in/">See More</a>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end wedo  section -->
+     
+    <!-- testimonial -->
+      <!-- <div class="testimonial">
+        <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage">
+                     <h2>Testimonial</h2>
+                     <p>It is a long established fact that a reader will be distracted by the </p>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-12">
+                  <div id="myCarousel" class="carousel slide testimonial_Carousel " data-ride="carousel">
+                     <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                     </ol>
+                     <div class="carousel-inner">
+                        <div class="carousel-item active">
+                           <div class="container">
+                              <div class="carousel-caption ">
+                                 <div class="row">
+                                    <div class="col-md-6 margin_boot">
+                                       <div class="test_box">
+                                          <i><img src="images/tes.jpg" alt="#"/></i>
+                                          <h4>JCKOLO</h4>
+                                          <span>(It is a long )</span>
+                                          <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as </p>
+                                       </div>
+                                    </div>
+                                    <div class="col-md-6 margin_boot">
+                                       <div class="test_box">
+                                          <i><img src="images/tes1.jpg" alt="#"/></i>
+                                          <h4>ROCOYO</h4>
+                                          <span>(It is a long )</span>
+                                          <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as </p>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="carousel-item">
+                           <div class="container">
+                              <div class="carousel-caption">
+                                 <div class="row">
+                                    <div class="col-md-6 margin_boot">
+                                       <div class="test_box">
+                                          <i><img src="images/tes.jpg" alt="#"/></i>
+                                          <h4>JCKOLO</h4>
+                                          <span>(It is a long )</span>
+                                          <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as </p>
+                                       </div>
+                                    </div>
+                                    <div class="col-md-6 margin_boot">
+                                       <div class="test_box">
+                                          <i><img src="images/tes1.jpg" alt="#"/></i>
+                                          <h4>ROCOYO</h4>
+                                          <span>(It is a long )</span>
+                                          <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as </p>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="carousel-item">
+                           <div class="container">
+                              <div class="carousel-caption">
+                                 <div class="row">
+                                    <div class="col-md-6 margin_boot">
+                                       <div class="test_box">
+                                          <i><img src="images/tes.jpg" alt="#"/></i>
+                                          <h4>JCKOLO</h4>
+                                          <span>(It is a long )</span>
+                                          <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as </p>
+                                       </div>
+                                    </div>
+                                    <div class="col-md-6 margin_boot">
+                                       <div class="test_box">
+                                          <i><img src="images/tes1.jpg" alt="#"/></i>
+                                          <h4>ROCOYO</h4>
+                                          <span>(It is a long )</span>
+                                          <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as </p>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                     <span class="sr-only">Previous</span>
+                     </a>
+                     <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                     <span class="sr-only">Next</span>
+                     </a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div> -->
+      <!-- end testimonial -->
+      </div>
+      <!--  footer -->
+      <footer id="contact">
+         <div class="footer">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-4">
+                     <div class="titlepage">
+                        <h2>Contact Us</h2>
+                     </div>
+                  </div>
+                  <div class="col-md-8">
+                     <ul class="location_icon">
+                        <li><a href="https://www.google.com/maps/place/KKR+AND+KSR+Institute+Of+Technology+And+Sciences/@16.2477826,80.3034182,12z/data=!4m10!1m2!2m1!1sKITS+LOCATION+GUNTUR!3m6!1s0x3a4a74eab6bb902d:0x256a70b621cbfbf0!8m2!3d16.247791!4d80.4307228!15sChRLSVRTIExPQ0FUSU9OIEdVTlRVUloWIhRraXRzIGxvY2F0aW9uIGd1bnR1cpIBB2NvbGxlZ2WaASRDaGREU1VoTk1HOW5TMFZKUTBGblNVTkxjVFZJY0Y5M1JSQULgAQD6AQQIABBJ!16s%2Fg%2F1tf6q6bp?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoJLDEwMjExMjM0SAFQAw%3D%3D"><i class="fa fa-map-marker" aria-hidden="true"></i></a> Locations</li>
+                        <li><a href="#"><i class="fa fa-volume-control-phone" aria-hidden="true"></i></a>+91863-2286666</li>
+                        <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a>principal kitsguntur.ac.in</li>
+                     </ul>
+                  </div>
+                  <div class="col-md-6">
+                     <form id="request" class="main_form">
+                        <div class="row">
+                           <div class="col-md-12 ">
+                              <input class="contactus" placeholder="Full Name" type="type" name="Full Name"> 
+                           </div>
+                           <div class="col-md-12">
+                              <input class="contactus" placeholder="Email" type="type" name="Email"> 
+                           </div>
+                           <div class="col-md-12">
+                              <input class="contactus" placeholder="Phone Number" type="type" name="Phone Number">                          
+                           </div>
+                           <div class="col-md-12">
+                              <textarea class="textarea" placeholder="Message" type="type" Message="Name">Message </textarea>
+                           </div>
+                           <div class="col-sm-col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                              <button class="send_btn">Send</button>
+                           </div>
+                           <div class="col-sm-col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                              <ul class="social_icon">
+                                 <li><a href="https://www.facebook.com/kitsguntur/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                 <li><a href="https://x.com/kits_guntur/status/1834072190712750472"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                 <li><a href="https://www.linkedin.com/in/kits-guntur-b49982139/?originalSubdomain=in"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                                 <li><a href="https://www.instagram.com/kits_guntur/reels/?locale=gb"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                              </ul>
+                           </div>
+                        </div>
+                     </form>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="map">
+                        <figure><img src="images/map.jpg" alt="#"/></figure>
+                     </div>
+                     <form class="bottom_form">
+                        <h3>EMAIL</h3>
+                        <input class="enter" placeholder="Enter your email" type="text" name="Enter your email">
+                        <button class="sub_btn">subscribe</button>
+                     </form>
+                  </div>
+               </div>
+            </div>
+            <div class="copyright">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-12">
+                        <p>KKR & KSR INSTITUTE OF TECHNOLOGY AND SCIENCES <a href="https://html.design/">,VINJANAMPADU,GUNTUR</a></p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <!-- end footer -->
+      <!-- Javascript files-->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery-3.0.0.min.js"></script>
+      <!-- sidebar -->
+      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="js/custom.js"></script>
+   </body>
+</html>
